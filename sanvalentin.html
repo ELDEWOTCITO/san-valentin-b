@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .heart {
+            font-size: 100px;
+            color: red;
+        }
+        .question {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #b3b3b3;
+            color: white;
+        }
+        .no:hover {
+            position: absolute;
+            left: calc(10% + 80% * random());
+            top: calc(10% + 80% * random());
+        }
+    </style>
+    <script>
+        function moveNoButton() {
+            const noButton = document.getElementById("noButton");
+            noButton.style.position = "absolute";
+            noButton.style.left = Math.random() * (window.innerWidth - 100) + "px";
+            noButton.style.top = Math.random() * (window.innerHeight - 50) + "px";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <div class="question">¿Quieres ser mi San Valentín? 💘</div>
+        <div class="buttons">
+            <button class="btn yes" onclick="alert('¡Sabía que dirías que sí! ❤️')">Sí</button>
+            <button class="btn no" id="noButton" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+</body>
+</html>
